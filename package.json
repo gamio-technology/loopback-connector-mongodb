@@ -1,9 +1,9 @@
 {
-  "name": "loopback-connector-mongodb",
+  "name": "loopback-connector-transactions-mongodb",
   "version": "6.0.0",
-  "description": "The official MongoDB connector for the LoopBack framework.",
+  "description": "Clone of the official MongoDB connector for the LoopBack framework with query transaction options.",
   "engines": {
-    "node": ">=10"
+    "node": ">=8"
   },
   "author": "IBM Corp.",
   "main": "index.js",
@@ -11,7 +11,7 @@
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "benchmarks": "make benchmarks",
     "leak-detection": "make leak-detection",
-    "test": "nyc mocha test/*.test.js node_modules/juggler-v4/test.js",
+    "test": "nyc mocha test/*.test.js node_modules/juggler-v3/test.js node_modules/juggler-v4/test.js",
     "lint": "eslint .",
     "posttest": "npm run lint"
   },
@@ -24,7 +24,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/strongloop/loopback-connector-mongodb.git"
+    "url": "git@github.com:Gamio-technology/loopback-connector-transactions-mongodb.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   },
   "keywords": [
     "connector",
