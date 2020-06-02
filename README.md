@@ -1,4 +1,4 @@
-# loopback-connector-mongodb
+# loopback-connector-transactions-mongodb
 
 The official MongoDB connector for the LoopBack framework.
 
@@ -7,7 +7,7 @@ The official MongoDB connector for the LoopBack framework.
 In your application root directory, enter this command to install the connector:
 
 ```sh
-npm install loopback-connector-mongodb --save
+npm install loopback-connector-transactions-mongodb --save
 ```
 
 This installs the module from npm and adds it as a dependency to the application's `package.json` file.

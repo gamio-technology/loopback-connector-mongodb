@@ -10,7 +10,8 @@ See also #23
 
 ## Checklist
 
-- [ ] DCO (Developer Certificate of Origin) [signed in all commits](https://loopback.io/doc/en/contrib/code-contrib.html)
+👉 [Read and sign the CLA (Contributor License Agreement)](https://cla.strongloop.com/agreements/strongloop/loopback-connector-transactions-mongodb) 👈
+
 - [ ] `npm test` passes on your machine
 - [ ] New tests added or existing tests modified to cover all changes
 - [ ] Code conforms with the [style guide](https://loopback.io/doc/en/contrib/style-guide-es6.html)
