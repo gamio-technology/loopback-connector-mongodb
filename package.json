@@ -1,6 +1,6 @@
 {
-  "name": "loopback-connector-transactions-mongodb",
-  "version": "6.0.3",
+  "name": "@gamio-technology/loopback-connector-mongodb",
+  "version": "6.1.0",
   "description": "Clone of the official MongoDB connector for the LoopBack framework with query transaction options.",
   "engines": {
     "node": ">=8"
@@ -11,8 +11,11 @@
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "benchmarks": "make benchmarks",
     "leak-detection": "make leak-detection",
+    "publish:lbcm": "npm publish --no-verify",
     "test": "nyc mocha test/*.test.js node_modules/juggler-v3/test.js node_modules/juggler-v4/test.js",
     "lint": "eslint .",
+    "prepublishOnly": "git add . && yarn release",
+    "release": "HUSKY_SKIP_HOOKS=1 CI=true standard-version -a --silent --no-verify --sign -t @gamio-technology/loopback-connector-mongodb\\@ && git push --follow-tags origin develop",
     "posttest": "npm run lint"
   },
   "files": [
@@ -27,7 +30,9 @@
     "url": "git@github.com:Gamio-technology/loopback-connector-transactions-mongodb.git"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
+    "registry": "https://npm.pkg.github.com/",
+    "access": "restricted",
+    "tag": "latest"
   },
   "keywords": [
     "connector",
@@ -48,9 +53,12 @@
   "devDependencies": {
     "benchmark": "^2.1.4",
     "bluebird": "^3.5.4",
+    "commitizen": "4.2.3",
+    "cz-conventional-changelog": "3.3.0",
     "coveralls": "^3.0.4",
     "eslint": "^6.6.0",
     "eslint-config-loopback": "^13.0.0",
+    "husky": "4.3.8",
     "juggler-v4": "file:./deps/juggler-v4",
     "loopback-datasource-juggler": "^4.0.0",
     "mocha": "^6.2.0",
@@ -58,7 +66,8 @@
     "rc": "^1.2.8",
     "semver": "^6.3.0",
     "should": "^13.2.1",
-    "sinon": "^7.5.0"
+    "sinon": "^7.5.0",
+    "standard-version": "9.1.1"
   },
   "ci": {
     "downstreamIgnoreList": [
@@ -66,6 +75,84 @@
       "bluemix-service-broker",
       "bluemix-security",
       "plan-manager"
+    ]
+  },
+  "config": {
+    "port": "8080",
+    "HUSKY_SKIP_HOOKS": "1 git rebase",
+    "access": "restricted",
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint:fix",
+      "prepare-commit-msg": "exec < /dev/tty && yarn commit --hook || true"
+    }
+  },
+  "standard-version": {
+    "types": [
+      {
+        "type": "revert",
+        "section": "Reverts",
+        "hidden": false
+      },
+      {
+        "type": "feat",
+        "section": "Features",
+        "hidden": false
+      },
+      {
+        "type": "fix",
+        "section": "Bug Fixes",
+        "hidden": false
+      },
+      {
+        "type": "improvement",
+        "section": "Feature Improvements",
+        "hidden": false
+      },
+      {
+        "type": "style",
+        "section": "Styling",
+        "hidden": false
+      },
+      {
+        "type": "perf",
+        "section": "Performance Improvements",
+        "hidden": false
+      },
+      {
+        "type": "chore",
+        "section": "Others",
+        "hidden": true
+      },
+      {
+        "type": "docs",
+        "section": "Docs",
+        "hidden": true
+      },
+      {
+        "type": "refactor",
+        "section": "Code Refactoring",
+        "hidden": true
+      },
+      {
+        "type": "test",
+        "section": "Tests",
+        "hidden": true
+      },
+      {
+        "type": "build",
+        "section": "Build System",
+        "hidden": true
+      },
+      {
+        "type": "ci",
+        "section": "CI",
+        "hidden": true
+      }
     ]
   }
 }
