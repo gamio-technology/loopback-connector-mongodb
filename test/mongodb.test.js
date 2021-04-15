@@ -749,7 +749,7 @@ describe('mongodb connector', function() {
   });
 
   it('should support Buffer type', function(done) {
-    User.create({name: 'John', icon: new Buffer('1a2')}, function(e, u) {
+    User.create({name: 'John', icon: new Buffer.alloc(3, '1a2')}, function(e, u) {
       User.findById(u.id, function(e, user) {
         user.icon.should.be.an.instanceOf(Buffer);
         done();
@@ -3749,7 +3749,7 @@ describe('mongodb connector', function() {
     });
   });
 
-  context('trimLeadingDollarSigns', () =>{
+  context('trimLeadingDollarSigns', () => {
     it('removes an extra leading dollar sign in ths operators', () => {
       const spec = '$eq';
       const updatedSpec = trimLeadingDollarSigns(spec);
