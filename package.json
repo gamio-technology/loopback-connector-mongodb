@@ -1,6 +1,6 @@
 {
   "name": "@gamio-technology/loopback-connector-mongodb",
-  "version": "6.0.2",
+  "version": "6.0.3",
   "description": "Clone of the official MongoDB connector for the LoopBack framework with query transaction options.",
   "engines": {
     "node": ">=8"
@@ -31,7 +31,6 @@
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/",
-    "access": "restricted",
     "tag": "latest"
   },
   "keywords": [
