@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.0.8](https://github.com/Gamio-technology/loopback-connector-transactions-mongodb/compare/@gamio-technology/loopback-connector-mongodb@6.0.7...@gamio-technology/loopback-connector-mongodb@6.0.8) (2021-04-15)
+
 ### [6.0.7](https://github.com/Gamio-technology/loopback-connector-transactions-mongodb/compare/@gamio-technology/loopback-connector-mongodb@6.0.6...@gamio-technology/loopback-connector-mongodb@6.0.7) (2021-04-15)
 
 ### [6.0.6](https://github.com/Gamio-technology/loopback-connector-transactions-mongodb/compare/@gamio-technology/loopback-connector-mongodb@6.0.5...@gamio-technology/loopback-connector-mongodb@6.0.6) (2021-04-15)
