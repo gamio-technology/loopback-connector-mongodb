@@ -1,6 +1,6 @@
 {
   "name": "@gamio-technology/loopback-connector-mongodb",
-  "version": "6.0.13",
+  "version": "6.0.14",
   "description": "Clone of the official MongoDB connector for the LoopBack framework with query transaction options.",
   "engines": {
     "node": ">=8"
@@ -11,7 +11,7 @@
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "benchmarks": "make benchmarks",
     "leak-detection": "make leak-detection",
-    "publish:lbcm": "npm publish --no-verify",
+    "publish:lbcm": "npm publish --no-verify --access public",
     "test": "nyc mocha test/*.test.js node_modules/juggler-v3/test.js node_modules/juggler-v4/test.js",
     "lint": "eslint .",
     "prepublishOnly": "git add . && yarn release",
