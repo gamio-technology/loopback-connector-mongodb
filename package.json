@@ -1,6 +1,6 @@
 {
-  "name": "@gamio-technology/loopback-connector-mongodb",
-  "version": "6.0.14",
+  "name": "loopback-connector-transactions-mongodb",
+  "version": "6.1.0",
   "description": "Clone of the official MongoDB connector for the LoopBack framework with query transaction options.",
   "engines": {
     "node": ">=8"
@@ -15,7 +15,7 @@
     "test": "nyc mocha test/*.test.js node_modules/juggler-v3/test.js node_modules/juggler-v4/test.js",
     "lint": "eslint .",
     "prepublishOnly": "git add . && yarn release",
-    "release": "HUSKY_SKIP_HOOKS=1 CI=true standard-version -a --silent --no-verify --sign -t @gamio-technology/loopback-connector-mongodb\\@ && git push --follow-tags origin $(git rev-parse --abbrev-ref HEAD)",
+    "release": "HUSKY_SKIP_HOOKS=1 CI=true standard-version -a --silent --no-verify --sign -t loopback-connector-transactions-mongodb\\@ && git push --follow-tags origin $(git rev-parse --abbrev-ref HEAD)",
     "posttest": "npm run lint"
   },
   "files": [
@@ -27,10 +27,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git@github.com:Gamio-technology/loopback-connector-mongodb.git"
+    "url": "git@github.com:gamio-technology/loopback-connector-mongodb.git"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com",
     "tag": "latest"
   },
   "keywords": [
