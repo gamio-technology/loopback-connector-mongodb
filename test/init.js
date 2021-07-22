@@ -9,7 +9,7 @@ module.exports = require('should');
 
 const juggler = require('loopback-datasource-juggler');
 let DataSource = juggler.DataSource;
-
+process.env.MONGODB_VERSION = '3.6.6';
 const TEST_ENV = process.env.TEST_ENV || 'test';
 let config = require('rc')('loopback', {test: {mongodb: {}}})[TEST_ENV]
   .mongodb;
